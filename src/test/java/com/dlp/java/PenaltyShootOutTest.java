@@ -1,8 +1,7 @@
 package com.dlp.java;
 
+import com.dlp.java.penaltyshoot.PenaltyShootOut;
 import org.junit.Assert;
-
-import static org.junit.Assert.*;
 
 public class PenaltyShootOutTest {
 
