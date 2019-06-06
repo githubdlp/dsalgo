@@ -18,8 +18,9 @@ public class Main {
     @RequestMapping(value = "/", produces = MediaType.TEXT_PLAIN_VALUE)
     public String process() {
         StringBuilder sb = new StringBuilder("Supported programs : \n");
-        sb.append(System.lineSeparator()).append("/penaltyshoot\n\t").append(": penalty goal shoot out decider.");
-        sb.append(System.lineSeparator()).append("/maxarea\n\t").append(": maximum rectangular area formed by consecutive buildings.");
+        sb.append(System.lineSeparator()).append("/penaltyshoot\n\t").append(": Penalty goal shoot out decider.");
+        sb.append(System.lineSeparator()).append("/maxarea\n\t").append(": Maximum rectangular area formed by consecutive buildings.");
+        sb.append(System.lineSeparator()).append("/nstep\n\t").append(": No of combination of 1 and 2 steps to cover N steps.");
         return sb.toString();
     }
 }

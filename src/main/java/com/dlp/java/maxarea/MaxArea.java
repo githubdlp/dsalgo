@@ -15,11 +15,11 @@ public class MaxArea {
      */
     public long findMaxArea(int[] height) {
         class BuildingInfo {
-            int heigth;
+            int height;
             int position;
 
             BuildingInfo(int height, int position) {
-                this.heigth = height;
+                this.height = height;
                 this.position = position;
             }
         }
@@ -28,10 +28,10 @@ public class MaxArea {
         long maxArea = 0;
         for (int index = 0; index < height.length; index++) {
             int currentHeight = height[index];
-            if (!(myStack.isEmpty() || myStack.peek().heigth <= currentHeight)) {
-                while (!myStack.isEmpty() && myStack.peek().heigth > currentHeight) {
+            if (!(myStack.isEmpty() || myStack.peek().height <= currentHeight)) {
+                while (!myStack.isEmpty() && myStack.peek().height > currentHeight) {
                     BuildingInfo bi = myStack.pop();
-                    maxArea = Math.max(maxArea, (index - (myStack.isEmpty() ? 0 : myStack.peek().position + 1)) * bi.heigth);
+                    maxArea = Math.max(maxArea, (index - (myStack.isEmpty() ? 0 : myStack.peek().position + 1)) * bi.height);
                 }
             }
             myStack.push(new BuildingInfo(height[index], index));
@@ -42,9 +42,9 @@ public class MaxArea {
             while (!myStack.isEmpty()) {
                 BuildingInfo bi = myStack.pop();
                 if (myStack.isEmpty()) {
-                    maxArea = Math.max(maxArea, (maxPosition + 1) * bi.heigth);
+                    maxArea = Math.max(maxArea, (maxPosition + 1) * bi.height);
                 } else {
-                    maxArea = Math.max(maxArea, (maxPosition - myStack.peek().position) * bi.heigth);
+                    maxArea = Math.max(maxArea, (maxPosition - myStack.peek().position) * bi.height);
                 }
             }
         }
